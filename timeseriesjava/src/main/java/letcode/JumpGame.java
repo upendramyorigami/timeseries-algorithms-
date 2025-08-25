@@ -2,5 +2,12 @@ package letcode;
 
 public class JumpGame {
     // LeetCode 55: Jump Game
-    // Add your solution here
+    public boolean canJump(int[] nums) {
+        int farthest = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (i > farthest) return false;
+            farthest = Math.max(farthest, i + nums[i]);
+        }
+        return true;
+    }
 }

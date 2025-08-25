@@ -2,5 +2,15 @@ package letcode;
 
 public class JumpGameII {
     // LeetCode 45: Jump Game II
-    // Add your solution here
+    public int jump(int[] nums) {
+        int jumps = 0, end = 0, farthest = 0;
+        for (int i = 0; i < nums.length - 1; i++) {
+            farthest = Math.max(farthest, i + nums[i]);
+            if (i == end) {
+                jumps++;
+                end = farthest;
+            }
+        }
+        return jumps;
+    }
 }
